@@ -1,0 +1,593 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/*Global*/
+/*by applying style to this star mark will add stylings to our entire HTML document*/
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+
+
+html{
+	scroll-behavior: smooth; /*Once we get to the footer & click to the arrow, it would animate it and make it smooth*/
+	/*Saves time since normally you do it with Javascript but you can now do it with CSS*/
+}
+
+body{
+	font-family: 'Poppins', sans-serif; /*we want this font to be applied on all the texts inside the body*/
+	
+}
+
+body h1{
+	color: #282FB9;
+}
+
+
+
+body a{
+	text-decoration: none; /*Meaning, we don't want to see the link underlined*/
+}
+
+/*Gradient Root Colors*/
+/*to specify css variables; by calling the variables, we can access the color*/
+/*two dashes followed by the name of the variable you want to call it*/
+:root {
+	--gradient1: linear-gradient(to bottom right,
+		rgb(107, 107, 255), blue);
+
+	--gradient2: linear-gradient(to bottom right,
+		rgb(80,80,255),
+		rgb(253, 119, 119));
+
+	--gradient3: linear-gradient(to bottom right,
+		rgb(255, 207, 145),
+		rgb(255, 111, 92));
+
+	--gradient4: linear-gradient(to bottom right, 
+		#2AF598, #009EFD);
+
+	--main-font: 'Poppins', sans-serif;
+
+	--main-font-color: #282FB9;
+
+	--secondary-font-color: #7C7C7C;
+
+	--tertiary-white-color: whitesmoke;
+};
+
+/*Header*/
+header {
+	background-image: url(../Images/header.png);"
+	background-repeat: no-repeat; /*so that the background wouldn't repeat*/
+	min-height: 100vh;
+}
+
+
+/*navbar*/
+.navbar{
+	height: 7.2rem; 
+	position: absolute;
+	display: flex; /*helps with alignment*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px 50px;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.navbar ul{
+	flex: 1;
+	text-align: right;
+
+}
+
+.navbar ul li{
+	list-style: none;
+	display: inline-block; /*the links would be displayed in one line*/
+	margin: 0 25px;
+}
+
+.navbar ul li a{
+	text-decoration: none;
+	color: var(--tertiary-white-color);
+}
+
+.logo {
+	width: 200px;
+}
+
+/*Moves the texts hi iam, name & image*/
+.row {
+	display: flex;
+	align-items: center;
+	padding-top: 5rem;
+
+}
+
+.ctn{
+	padding: 10px 20px;	
+	background: var(--gradient3);
+	border-radius: 50px;
+}
+
+.ctn:hover{
+	background: linear-gradient(to bottom right,
+		rgb(255,111,92),
+		rgb(255, 207, 145)
+	);
+}
+
+.header-content, .hero-img{
+	flex-basis: 50%;
+	padding: 5rem;
+}
+
+.header-content h1{
+	font-size: 7vmin; /*vmin makes text responsive regardless of window size*/
+	margin-bottom: 30px;
+	color: #4642FF;
+	/*margin-top: 7rem; -> removed para sumama si p*/
+}
+
+.header-content h3{
+	font-size: 3vmin;
+	margin-top: 140px;
+	display: inline-block;
+}
+
+.header-content p{
+	margin-bottom: 30px;
+}
+
+.resume{
+	padding: 10px 20px;
+	border: 1px solid tomato;
+	border-radius: 50px;
+	color: tomato;
+	margin-right: 30px;
+}
+
+.resume:hover{
+	background: var(--gradient3);
+	border: none
+	color: var(--tertiary-white-color);
+}
+
+.hero-img img{
+	margin-left: 50px;
+	width: 500px;
+	height: 500px;
+}
+
+/*Services*/
+.services-section{
+	margin-top: 80px;
+}
+
+.services-container{
+	padding: 3rem;
+	display: flex;
+}
+
+.grid-wrapper, .services-content{
+	flex-basis: 50%;
+}
+
+.grid-wrapper{
+	display: grid;
+	/*grid-template-columns: 1fr 1fr; /*aligns grid boxes in 1fr, 1fr means align content in 2 columns with 1 fr of space*/
+	/*grid-template-columns: repeat(4, 1fr); -> aligns content 4 times in 1fr ratio*/
+	grid-template-columns: repeat(auto-fit, minmax(250px, auto)); /*aligns content; if there is 250px of space, boxes will align at single row; no space for 250px, box gets down*/
+	/*auto-fit allows the content to fit into the remaining space*/
+	grid-gap: 2em; /*adds a gap of spaces between the boxes*/
+	padding: 2rem;
+}
+
+
+.grid-box{
+	height: 200px;
+	padding: 2rem;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px rgba(0,0,0, 0.438);
+}
+
+.grid-box img{
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	animation: scaleup 6s ease-in-out infinite; /*First animation*/
+}
+
+.grid-box h1{
+	color: var(--tertiary-white-color);
+	font-weight: 500;
+}
+
+.softwareapp{
+	background: var(--gradient1);
+}
+
+.mobileapp{
+	background: var(--gradient2);
+}
+.webdesign{
+	background: var(--gradient3);
+	margin-top: 30px;
+}
+.researcher{
+	background: var(--gradient4);
+	margin-top: 30px;
+}
+
+.services-content{
+	padding: 3rem;
+	position: relative; /*parent of the circle that's why it is relative*/
+}
+
+.services-content h1{
+	font-size: 6vmin;
+	margin-bottom: 30px;
+}
+
+.services-content p{
+	padding-right: 6rem;
+	margin-bottom: 30px;
+}
+
+.circle img{
+	position: absolute;
+	top: -10%;
+	left: -20%;
+	width: 500px;
+	z-index: -1; /*it's like send image backward*/
+	animation: scaleup 6s ease-in-out infinite; /*First animation*/
+}
+
+
+/*Animations*/
+@keyframes scaleup{
+	0%{
+		transform: scale(1.2);
+	}
+
+	50%{
+		transform: scale(1);
+	}
+
+	100%{
+		transform: scale(1.2);
+	}
+}
+
+/*SKILLS*/
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-gap: 5rem;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.skills-logo {
+    list-style: none;
+}
+
+.skills-logo img {
+	margin-top: 50px;
+    display: block;
+    /* Make sure max-width is added */
+    max-width: 100%;
+    width: 130px;
+    height: 75px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+
+}
+
+.skills-section h1{
+	font-size: 40px;
+}
+
+.skills-section{
+	margin-top: 80px;
+	text-align: center;
+
+}
+
+/*Highlights*/
+.highlights-section{
+	margin-top: 80px;
+	text-align: center;
+
+}	
+
+
+.highlights-section h1{
+	font-size: 40px;
+}
+
+
+.highlights-container{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 0;
+	padding-bottom: 50px;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline ul {
+  list-style: none;
+}
+.timeline ul li {
+  padding: 20px;
+  background-color: #1e1f22;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
+.timeline-content h1 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.timeline-content .date {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+  }
+  .timeline ul li {
+    width: 50%;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+  .timeline ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 0px;
+  }
+  .timeline ul li:nth-child(odd)::before {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+  .timeline ul li:nth-child(even)::before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+  .timeline-content .date {
+    position: absolute;
+    top: -30px;
+  }
+  .timeline ul li:hover::before {
+    background-color: var(--main-font-color);
+  }
+}
+
+/*Projects*/
+.projects-section{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.projects-images{
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+}
+
+.projects-section h1{
+	font-size: 40px;
+}
+.proj-img{
+	height: 300px;
+	overflow: hidden;
+	position: relative; /*By positioning this as relative, you'd see the details on top of the image*/
+}
+
+.proj-img img{
+	max-height: 100%;
+
+	min-width: 100%; /*to make it responsive*/
+}
+
+.details{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 255, 0.534);
+	transform: scaleX(0); /*We don't want the details to always be occuring, rather we want it on hover*/
+	transition: transform 0.5s ease;
+}
+
+.proj-img:hover .details{
+	transform: scaleX(1);
+} 
+
+.details h1,h2,i{
+	color: var(--tertiary-white-color);
+}
+
+.details i{
+	font-size: 30px;
+}
+
+/*Contact*/
+.contact-section{
+	margin-top: 80px;
+}
+
+.ctn-container{
+	display: flex;
+	width: 80%;
+	padding: 2rem;
+	margin: 10px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.212);
+	justify-content: space-around;
+	border-radius: 10px;
+	background: black;
+}
+
+.ctn-text p{
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: var(--tertiary-white-color);
+}
+
+.ctn-btn{
+	padding: 10px 20px;
+	color: white;
+	background: var(--gradient1);
+	border: none;
+	font-size: 20px;
+	border-radius: 2px;
+	box-shadow: 0px 0px 5px rgba(0,0,255, 0.479);
+	cursor: pointer;
+	outline: none;
+}
+
+.ctn-btn:hover{
+	background: var(--gradient4);
+
+}
+.social-profiles li{
+	list-style: none;
+	display: inline-block;
+}
+
+.social-profiles i{
+	margin: 5px 30px;
+	margin-left: 0px;
+	font-size: 25px;
+	color: grey;
+	font-weight: 400;
+	color: grey;
+}
+
+/*Footer*/
+.footer-section{
+	margin-top: 80px;
+	background-image: url('../Images/hf/footer.png');
+	background-size: cover;
+}
+
+.col-2{
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-basis: 50%;
+}
+
+.footer1 h1{
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+.footer1 i{
+	margin: 50px 20px;
+	font-size: 25px;
+	color: grey;
+}
+
+.footer2 h4{
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+.footer i{
+	font-weight: 400;
+	color: grey;
+}
+
+.footer hr{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.copyright{
+	display: flex;
+	justify-content: center;
+	color: grey;
+	padding: 30px;
+	font-weight: 400;
+}
+
+
+#btnScrollToTop{
+	position: fixed; /*It should float on top of any other content*/
+	right: 10px;
+	bottom: 10px; /*positions it on the bottom right*/
+	width: 50px;
+	height: 50px;
+	border-radius: 50%; /*makes it into a circle*/
+	background: var(--gradient1);
+	box-shadow: 0 0 10px rgba(0,0,0, 0.25);
+	color: white;
+	outline: none;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+	justify-content: center;
+}
+
+#btnScrollToTop:active{
+	background: var(--gradient1);
+}

@@ -1,0 +1,10 @@
+//colors
+h1: #282FB9
+P: #7C7C7C
+
+//Useful websites:
+Get those icons at: FontAwesome & Google
+Get those waves at: getwaves.io
+Get those svg at: undraw.co
+Get those pictures at: unsplash.com
+Get those gradients at: https://uigradients.com/#Mild
